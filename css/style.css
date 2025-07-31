@@ -17,15 +17,15 @@ header h1 {
   margin: 0;
   font-size: 1.8rem;
 }
+
+.header-img {
+  width: 100%;
+}
+
 footer {
   text-align: center;
   background: #fff0f0;
   padding: 10px;
-}
-.brand {
-  font-size: 2.2rem;
-  color: #d64550;
-  display: block;
 }
 
 main {
@@ -37,10 +37,6 @@ main {
 h2 {
   color: #d64550;
   margin-top: 2rem;
-}
-
-header img {
-  width: 100%;
 }
 
 address {
