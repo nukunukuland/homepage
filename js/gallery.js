@@ -1,9 +1,9 @@
 //js/gallery.js（スライド写真＋スマホ対応）
 
 const galleryImages = [
-  "img/gallery/photo1.jpg",
-  "img/gallery/photo2.jpg",
-  "img/gallery/photo3.jpg"
+  "image/gallery/photo1.jpg",
+  "image/gallery/photo2.jpg",
+  "image/gallery/photo3.jpg"
 ];
 
 const track = document.querySelector(".gallery-track");
