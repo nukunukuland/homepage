@@ -27,19 +27,19 @@ function renderHeaderNav() {
     navMenu.style.display = 'none';
     navMenu.innerHTML = `
           <ul>
-           <li><a href="index.html">ホーム</a></li>
+           <li><a href="/homepage/index.html">ホーム</a></li>
            <li class="has-submenu">
              <a>親子子育て広場とは</a>
              <ul class="submenu">
-               <li><a href="/profile">ぬくぬくについて</a></li>
-               <li><a href="/contact">お問い合わせ</a></li>
+               <li><a href="/homepage/profile">ぬくぬくについて</a></li>
+               <li><a href="/homepage/contact">お問い合わせ</a></li>
              </ul>
            </li>
            <li class="has-submenu">
              <a>活動について</a>
              <ul class="submenu">
-               <li><a href="/massage">ベビーマッサージ</a></li>
-               <li><a href="/profile">プロフィール</a></li>
+               <li><a href="/homepage/massage">ベビーマッサージ</a></li>
+               <li><a href="/homepage/profile">プロフィール</a></li>
              </ul>
            </li>
            <li><a href="#">イベントカレンダー</a></li>
@@ -59,25 +59,25 @@ function renderHeaderNav() {
     navHTML = `
       <div class="header-wrapper">
        <div class="site-name">
-        <a href="index.html">
+        <a href="/homepage/index.html">
         <img src="/homepage/image/nukunuku.svg" alt="サイト名" class="header-img">
         </a>
        </div>
         <nav class="header-nav">
           <ul>
-           <li class="main-menu"><a href="index.html">ホーム</a></li>
+           <li class="main-menu"><a href="/homepage/index.html">ホーム</a></li>
            <li class="has-submenu">
-             <a href="massage.html">親子子育て広場とは</a>
+             <a href="/homepage/massage">親子子育て広場とは</a>
              <ul class="submenu">
-               <li><a href="/profile">ぬくぬくについて</a></li>
-               <li><a href="/contact">お問い合わせ</a></li>
+               <li><a href="/homepage/profile">ぬくぬくについて</a></li>
+               <li><a href="/homepage/contact">お問い合わせ</a></li>
              </ul>
            </li>
            <li class="has-submenu">
              <a href="#">活動について</a>
              <ul class="submenu">
-               <li><a href="/massage">ベビーマッサージ</a></li>
-               <li><a href="/profile">プロフィール</a></li>
+               <li><a href="/homepage/massage">ベビーマッサージ</a></li>
+               <li><a href="/homepage/profile">プロフィール</a></li>
              </ul>
            </li>
            <li class="main-menu"><a href="#">イベントカレンダー</a></li>
@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
