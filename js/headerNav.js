@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       } else {
         // index.html に calendar フラグをつけて遷移
-        link.setAttribute('href', 'index.html#calendar');
+        link.setAttribute('href', '/homepage/index.html#calendar');
       }
     });
   });
@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
