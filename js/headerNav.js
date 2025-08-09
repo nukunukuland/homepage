@@ -11,7 +11,7 @@ function renderHeaderNav() {
     navHTML = `
       <div class="header-wrapper">
        <div class="site-name">
-        <a href="index.html">
+        <a href="/homepage/index.html">
         <img src="/homepage/image/nukunuku.svg" alt="サイト名" class="header-img">
 　　　　</a>
        </div>
@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
