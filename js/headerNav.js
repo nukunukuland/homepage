@@ -12,11 +12,11 @@ function renderHeaderNav() {
       <div class="header-wrapper">
        <div class="site-name">
         <a href="index.html">
-        <img src="image/nukunuku.svg" alt="サイト名" class="header-img">
+        <img src="/homepage/image/nukunuku.svg" alt="サイト名" class="header-img">
 　　　　</a>
        </div>
         <button class="hamburger" aria-label="メニューを開く">
-          <img src="image/menu-icon.svg" alt="メニュー" />
+          <img src="/homepage/image/menu-icon.svg" alt="メニュー" />
         </button>
       </div>
     `;
@@ -31,15 +31,15 @@ function renderHeaderNav() {
            <li class="has-submenu">
              <a>親子子育て広場とは</a>
              <ul class="submenu">
-               <li><a href="about.html">ぬくぬくについて</a></li>
-               <li><a href="contact.html">お問い合わせ</a></li>
+               <li><a href="/profile">ぬくぬくについて</a></li>
+               <li><a href="/contact">お問い合わせ</a></li>
              </ul>
            </li>
            <li class="has-submenu">
              <a>活動について</a>
              <ul class="submenu">
-               <li><a href="massage.html">ベビーマッサージ</a></li>
-               <li><a href="profile.html">プロフィール</a></li>
+               <li><a href="/massage">ベビーマッサージ</a></li>
+               <li><a href="/profile">プロフィール</a></li>
              </ul>
            </li>
            <li><a href="#">イベントカレンダー</a></li>
@@ -60,7 +60,7 @@ function renderHeaderNav() {
       <div class="header-wrapper">
        <div class="site-name">
         <a href="index.html">
-        <img src="image/nukunuku.svg" alt="サイト名" class="header-img">
+        <img src="/homepage/image/nukunuku.svg" alt="サイト名" class="header-img">
         </a>
        </div>
         <nav class="header-nav">
@@ -69,15 +69,15 @@ function renderHeaderNav() {
            <li class="has-submenu">
              <a href="massage.html">親子子育て広場とは</a>
              <ul class="submenu">
-               <li><a href="profile.html">ぬくぬくについて</a></li>
-               <li><a href="contact.html">お問い合わせ</a></li>
+               <li><a href="/profile">ぬくぬくについて</a></li>
+               <li><a href="/contact">お問い合わせ</a></li>
              </ul>
            </li>
            <li class="has-submenu">
              <a href="#">活動について</a>
              <ul class="submenu">
-               <li><a href="massage.html">ベビーマッサージ</a></li>
-               <li><a href="profile.html">プロフィール</a></li>
+               <li><a href="/massage">ベビーマッサージ</a></li>
+               <li><a href="/profile">プロフィール</a></li>
              </ul>
            </li>
            <li class="main-menu"><a href="#">イベントカレンダー</a></li>
@@ -191,5 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
