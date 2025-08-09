@@ -5,6 +5,7 @@ body {
   margin: 0;
   background: #fffaf5;
   color: #333;
+  overflow-x: hidden;
 }
 
 header {
@@ -24,12 +25,24 @@ header h1 {
 
 footer {
   text-align: center;
-  background: #fff0f0;
+  background: #ffdddd;
   padding: 10px;
+}
+
+footer a {
+  color: #fff;
+  padding: 0 8px 0 8px;
+  text-decoration: none;
+}
+
+.copy {
+  margin:0;
+  color:#fff;
 }
 
 main {
   padding: 1.5rem;
+  padding-top:0;
   max-width: 800px;
   margin: auto;
 }
@@ -37,6 +50,7 @@ main {
 h2 {
   color: #d64550;
   margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 address {
@@ -44,6 +58,15 @@ address {
   background: #fff0f0;
   padding: 1rem;
   border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: #ff6565;
+}
+
+.message p {
+  margin: 5px;
 }
 
 /* アニメーション */
@@ -59,7 +82,7 @@ address {
 }
 
 /* レスポンシブ */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   header h1 {
     font-size: 2.5rem;
   }
@@ -74,7 +97,6 @@ address {
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin-top: 1rem;
 }
 
 .gallery-track {
@@ -86,12 +108,16 @@ address {
 .gallery-track img {
   width: 100%;
   flex-shrink: 0;
-  border-radius: 8px;
+}
+
+/* ギャラリー横幅いっぱいにする */
+.gallery {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .gallery-indicators {
   text-align: center;
-  margin-top: 0.5rem;
 }
 
 .gallery-indicators span {
@@ -110,7 +136,6 @@ address {
 
 /* カレンダー */
 #calendar-container {
-  margin-top: 1rem;
   padding: 1rem;
   background: #fff0f0;
   border-radius: 8px;
@@ -292,4 +317,454 @@ address {
 
 .calendar-table .sat {
  color: #03A9F4;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-img {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.header-nav {
+  position: absolute;
+  left: 320px;
+}
+
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.header-nav li {
+  margin: 0;
+  transition: transform 0.3s ease; 
+  justify-items: center;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #d64550;
+  font-weight: bold;
+  display: block;
+  width: 165px;
+  height: 52px;
+  letter-spacing: 1px;
+  align-content: center;
+  transition: all 0.3s ease; 
+  outline: none;
+  cursor: pointer;
+}
+
+/* ホバー＆タッチ（モバイル用） */
+.header-nav a:hover,
+.header-nav a:focus,
+.header-nav a:active {
+  transform: translateY(-3px);  
+}
+
+
+/* スマホ対応 */
+@media (max-width: 1024px) {
+  .header-wrapper {
+    align-items: center;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-nav a {
+    padding: 0.5rem 0;
+    display: block;
+  }
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.hamburger img {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 1024px) {
+  .header-nav {
+    position: fixed;  
+    top: 89px;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    overflow-y: auto;
+    background: #fff0f0;
+    padding: 0 0.5rem;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .header-nav a {
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+.site-name {
+    width: 200px;
+}
+
+.site-name a {
+   text-decoration: none;
+   width: 200px;
+   display: block;
+}
+
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffdddd;
+  z-index: 999;
+  width: 200px;
+}
+@media (min-width: 1025px) {
+  .submenu {
+    top: 71px;
+  }
+  .main-menu,
+  .has-submenu {
+    padding: 1rem;
+  }
+}
+
+.submenu li {
+  margin: 0;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #d64550;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.submenu a:hover {
+  background: #ffdcdc;
+  color: #fff;
+}
+
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu,
+.has-submenu.active .submenu {
+  visibility: visible;
+  opacity: 1;
+  max-height: 1000px;
+}
+
+
+@media (max-width: 1024px) {
+  .has-submenu:not(.active):hover .submenu {
+    visibility: hidden !important;
+ }
+
+.has-submenu:not(.active) > .submenu {
+  opacity: 0 !important;
+ }
+}
+
+#wrapper {
+  position: relative;
+  z-index: 0; 
+}
+
+#wrapper ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('file:///C:/Users/soraw/Documents/その他/ぬくぬくHP/img/wrapper-background.PNG') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+footer div,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer ul,
+footer li,
+footer dl,
+footer dt,
+footer dd,
+footer p {
+  margin:0;
+  padding: 0;
+  border: 0;
+}
+
+.footer-wrapper{
+   padding: 20px 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.footer-wrapper ul,
+.footer-wrapper li {
+   list-style: none;
+   text-align: left;
+}
+
+.footer-snsIcon {
+   width: 38px;
+   height: 38px;
+}
+
+.footer-snsAccount {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   width:60%;
+}
+
+.footer-snsAccount a {
+  display: flex;
+}
+
+.footer-logo {
+   width: 33.5%;
+   display: flex;
+   justify-content: flex-start;
+   order: 1;
+}
+
+.footer-img {
+   height: 50px;
+   max-width: 100%;
+}
+
+.footer-snsAccount-link {
+   margin-left: 22px;
+}
+
+.footer-snsAccount-title {
+   font-weight: bold;
+}
+
+.footer-address {
+   width: 34.5%;
+}
+
+.footer-nav {
+   margin-top: 35px;
+   width: 30%;
+}
+
+.footer-address li {
+   margin-top: 35px;
+}
+
+.footer-snsAccount {
+   order: 2;
+}
+
+.footer-address {
+   order: 3;
+}
+
+.footer-nav1 {
+   order: 4;
+}
+
+.footer-nav2 {
+   order: 5;
+}
+
+.footer-logo a {
+   padding:0;
+}
+
+@media screen and (max-width: 768px) {
+
+  footer {
+    padding: 10px;
+  }
+  .footer-snsAccount {
+     margin-top: 22px;
+     width: 100%;
+     flex-wrap: wrap;
+     justify-content: center;
+  }
+ .footer-snsAccount-link {
+    margin-left: 0px;
+  }
+ .footer-logo {
+    margin-top: 22px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-logo a {
+    padding:0;
+  }
+  .footer-address h2 {
+    font-size: 16px;
+  }
+  .footer-wrapper {
+    padding-top: 0;
+  }
+  .footer-wrapper li {
+    font-size: 13px;
+  }
+  .footer-nav a {
+    padding:0;
+  }
+  .copy {
+    font-size: 12px;
+  }
+  .add-sns p {
+    font-size: 1rem !important;
+  }
+}
+
+/* トピックエリア */
+.topics {
+  background: #fff0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.topics-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.topics-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topics-list li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e9bebe;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.topics-list .date {
+  font-size: 1rem;
+  color: #666;
+  margin-right: 0.8rem;
+  white-space: nowrap;
+  padding-right: 15px;
+  border-right: 1px solid #000;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.topics-list .cat {
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #fff;
+  width: 80px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat01 { background: #d64550; } /* イベント */
+.cat02 { background: #03A9F4; } /* お知らせ */
+.cat03 { background: #4CAF50; } /* 募集 */
+.cat04 { background: #c1c1c1; } /* その他 */
+
+
+.topics-list .explain {
+  width: 400px;
+  color: #333;
+}
+
+.topics h2 {
+  margin:0;
+}
+
+.topics h2 img {
+  width:100%;
+}
+
+@media (max-width: 1024px) {
+  .topics-list li {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .topics-list .cat {
+    font-size: 10px;
+    width: 117px;
+  }
+  .topics-list .explain {
+    font-size: 15px;
+  }
+  .topics-wrapper {
+    display: block;
+  }
+ .topics h2 img {
+    width: 60%;
+  }
+}
+
+.tp-more-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background: #d64550;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width:100px;
 }
