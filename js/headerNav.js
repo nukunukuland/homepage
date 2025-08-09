@@ -175,13 +175,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       } else {
-        // index.html に calendar フラグをつけて遷移
-        link.setAttribute('href', '/homepage/index.html#calendar');
+        // トップページ に calendar フラグをつけて遷移
+        link.setAttribute('href', '/homepage#calendar');
       }
     });
   });
 
-  // index.htmlに戻ったとき #calendar があればスクロール
+  // トップページに戻ったとき #calendar があればスクロール
   if (location.hash === '#calendar') {
     const calendarSection = document.getElementById('calendar');
     if (calendarSection) {
@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
