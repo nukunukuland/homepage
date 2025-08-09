@@ -513,7 +513,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('file:///C:/Users/soraw/Documents/その他/ぬくぬくHP/img/wrapper-background.PNG') no-repeat center center;
+  background: url('/homepage/image/wrapper-background.PNG') no-repeat center center;
   background-size: cover;
   opacity: 0.3;
   z-index: -1;
