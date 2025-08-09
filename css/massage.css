@@ -98,13 +98,13 @@ main {
 }
 
 .massage-content::before {
-  background: url('https://wakatake-kodomoen.com/wp/wp-content/uploads/2019/06/s_IMG_7454.jpg') no-repeat center center;
+  background: url('/homepage/image/profile/profile-background.jpg') no-repeat center center;
   background-size: cover;
   transform: scaleX(-1)
 }
 
 .contact-content::before {
-  background: url('https://wakatake-kodomoen.com/wp/wp-content/uploads/2019/06/s_IMG_7454.jpg') no-repeat center center;
+  background: url('/homepage/image/profile/profile-background.jpg') no-repeat center center;
   background-size: cover;
   transform: scaleX(-1)
 }
@@ -159,5 +159,6 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
