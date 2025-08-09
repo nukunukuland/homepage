@@ -60,7 +60,7 @@ function renderHeaderNav() {
       <div class="header-wrapper">
        <div class="site-name">
         <a href="index.html">
-        <img src="img/nukunuku.svg" alt="サイト名" class="header-img">
+        <img src="image/nukunuku.svg" alt="サイト名" class="header-img">
         </a>
        </div>
         <nav class="header-nav">
@@ -191,4 +191,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
