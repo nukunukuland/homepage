@@ -768,6 +768,8 @@ footer {
   }
   .topics-list .date {
     border:none;
+    margin-right: 0;
+    padding-right: 0;
   }
   .topics-list .cat {
     font-size: 10px;
