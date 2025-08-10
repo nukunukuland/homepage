@@ -758,8 +758,16 @@ footer {
 
 @media (max-width: 1024px) {
   .topics-list li {
-    flex-wrap: nowrap;
-    align-items: center;
+     flex-wrap: wrap;
+     align-items: center;
+     padding-bottom: 4vw;
+     margin-bottom: 4vw;
+     display: flex;
+     justify-content: flex-start;
+     gap: 5vw;
+  }
+  .topics-list .date {
+    border:none;
   }
   .topics-list .cat {
     font-size: 10px;
