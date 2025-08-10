@@ -24,13 +24,54 @@ document.addEventListener("DOMContentLoaded", () => {
     new Date(String(b.date).replace(/\./g, '-')) - new Date(String(a.date).replace(/\./g, '-'))
   );
 
-    // 現在のページが /homepage/topic か判定
-    const isTopicPage = location.pathname.includes("/homepage/topic");
+  // 現在のページが /homepage/topic/index.html か判定
+  const isTopicPage = location.pathname.includes("/homepage/topic/index.html");
 
-    // トピックページ/homepage/topic 以外は上から5件だけ表示
-    const displayData = isTopicPage ? topicsData : topicsData.slice(0, 5);
+  // ページネーション用変数
+  let currentPage = 1;
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(topicsData.length / itemsPerPage);
+
+  function renderTopics(page) {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const displayData = isTopicPage
+      ? topicsData.slice(start, end)
+      : topicsData.slice(0, 5);
 
     topicsList.innerHTML = displayData.map(item => {
+      const label = catLabels[item.catClass] || item.cat || "";
+      return `
+        <li>
+          <span class="date">${item.date}</span>
+          <a href="${item.catLink}" class="cat ${item.catClass}">${label}</a>
+          <a href="${item.link}" class="explain">${item.title}</a>
+        </li>
+      `;
+    }).join("");
+
+    if (isTopicPage) {
+      const paginationWrapper = document.createElement("div");
+      paginationWrapper.className = "pagination-wrapper";
+      paginationWrapper.innerHTML = `
+        <button class="pagination-button" onclick="changeFestivalPage(-1)" ${page === 1 ? "disabled" : ""}>← 前へ</button>
+        <span class="pagination">${page} / ${totalPages}ページ</span>
+        <button class="pagination-button" onclick="changeFestivalPage(1)" ${page === totalPages ? "disabled" : ""}>次へ →</button>
+      `;
+      topicsList.parentNode.appendChild(paginationWrapper);
+    }
+  }
+
+  // ページ切り替え関数（グローバル化してHTMLから呼べるように）
+  window.changeFestivalPage = function(direction) {
+    currentPage += direction;
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > totalPages) currentPage = totalPages;
+    renderTopics(currentPage);
+  };
+
+  // 初期描画
+  renderTopics(currentPage);
 
     // マップに無ければ item.cat（互換性のため）を使う。両方無ければ空文字。
     const label = catLabels[item.catClass] || item.cat || "";
@@ -44,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }).join("");
 });
+
 
 
 
