@@ -48,7 +48,7 @@ main {
 }
 
 @media (max-width: 1024px) {
- .main {
+ main {
      padding: 1rem;
   }
 }
