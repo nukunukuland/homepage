@@ -60,11 +60,8 @@ h2 {
   margin-bottom: 0;
 }
 
-address {
-  font-style: normal;
-  background: #fff0f0;
-  padding: 1rem;
-  border-radius: 8px;
+section {
+  margin-bottom: 1rem;
 }
 
 a {
@@ -750,7 +747,8 @@ footer {
   color: #333;
 }
 
-.topics h2 {
+.topics h2,
+.calendar h2{
   margin:0;
 }
 
