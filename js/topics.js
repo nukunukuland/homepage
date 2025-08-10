@@ -20,10 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const topicsList = document.querySelector(".topics-list");
   if (!topicsList) return;
 
-  topicsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  topicsData.sort((a, b) =>
+    new Date(String(b.date).replace(/\./g, '-')) - new Date(String(a.date).replace(/\./g, '-'))
+  );
 
-    // 現在のページが topic.html か判定
-    const isTopicPage = location.pathname.includes("topic.html");
+    // 現在のページが /homepage/topic か判定
+    const isTopicPage = location.pathname.includes("/homepage/topic");
 
     // topic.html 以外は上から5件だけ表示
     const displayData = isTopicPage ? topicsData : topicsData.slice(0, 5);
@@ -42,5 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }).join("");
 });
+
 
 
