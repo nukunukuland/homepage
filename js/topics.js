@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 現在のページが /homepage/topic か判定
     const isTopicPage = location.pathname.includes("/homepage/topic");
 
-    // トピックページ/homepage/topictopic 以外は上から5件だけ表示
+    // トピックページ/homepage/topic 以外は上から5件だけ表示
     const displayData = isTopicPage ? topicsData : topicsData.slice(0, 5);
 
     topicsList.innerHTML = displayData.map(item => {
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }).join("");
 });
+
 
 
 
