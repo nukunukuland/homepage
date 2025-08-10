@@ -726,11 +726,11 @@ footer {
 .topics-list .cat {
   padding: 0.2rem 0.5rem;
   margin-right: 0.8rem;
-  border-radius: 12px;
+  border-radius: 1rem;
   font-size: 1rem;
   color: #fff;
-  width: 80px;
-  height: 25px;
+  width: 100px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -772,8 +772,7 @@ footer {
     padding-right: 0;
   }
   .topics-list .cat {
-    font-size: 10px;
-    width: 117px;
+    font-size: 14px;
   }
   .topics-list .explain {
     font-size: 15px;
