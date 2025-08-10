@@ -619,7 +619,7 @@ footer p {
    padding:0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
   footer {
     padding: 10px;
@@ -776,7 +776,7 @@ footer {
   bottom:0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     footer {
         padding: 10px;
         height: 39.5vh;
