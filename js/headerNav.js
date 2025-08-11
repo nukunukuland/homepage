@@ -27,7 +27,7 @@ function renderHeaderNav() {
     navMenu.style.display = 'none';
     navMenu.innerHTML = `
           <ul>
-           <li><a href="/homepage/index.html">ホーム</a></li>
+           <li><a href="/homepage">ホーム</a></li>
            <li class="has-submenu">
              <a>親子子育て広場とは</a>
              <ul class="submenu">
@@ -65,7 +65,7 @@ function renderHeaderNav() {
        </div>
         <nav class="header-nav">
           <ul>
-           <li class="main-menu"><a href="/homepage/index.html">ホーム</a></li>
+           <li class="main-menu"><a href="/homepage">ホーム</a></li>
            <li class="has-submenu">
              <a href="/homepage/massage">親子子育て広場とは</a>
              <ul class="submenu">
@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
