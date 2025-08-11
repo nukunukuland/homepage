@@ -353,6 +353,8 @@ a {
   margin: 0;
   transition: transform 0.3s ease; 
   justify-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .header-nav a {
