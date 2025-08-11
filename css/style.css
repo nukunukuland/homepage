@@ -383,6 +383,9 @@ a {
 @media (max-width: 1024px) {
   .header-wrapper {
     align-content: center;
+    justify-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .header-nav ul {
