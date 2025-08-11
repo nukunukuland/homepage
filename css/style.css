@@ -380,7 +380,7 @@ a {
 /* スマホ対応 */
 @media (max-width: 1024px) {
   .header-wrapper {
-    align-items: center;
+    align-content: center;
   }
 
   .header-nav ul {
