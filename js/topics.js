@@ -23,32 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   topicsData.sort((a, b) =>
     new Date(String(b.date).replace(/\./g, '-')) - new Date(String(a.date).replace(/\./g, '-'))
   );
-
-    // --- 追加: URL が /homepage/topics/catXX のときはそのカテゴリのみ表示 ---
-  // 例: /homepage/topics/cat01 -> selectedCat = "cat01"
-  const categoryMatch = location.pathname.match(/\/homepage\/topics\/(cat\d{2})(?:\/|$|index\.html)?/);
-  if (categoryMatch) {
-    const selectedCat = categoryMatch[1];
-    const filteredData = topicsData.filter(item => item.catClass === selectedCat);
-
-    if (filteredData.length === 0) {
-      topicsList.innerHTML = `<li class="no-result">該当するお知らせはありません。</li>`;
-    } else {
-      topicsList.innerHTML = filteredData.map(item => {
-        const label = catLabels[item.catClass] || item.cat || "";
-        return `
-          <li>
-            <span class="date">${item.date}</span>
-            <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
-            <a href="${item.link}" class="explain">${item.title}</a>
-          </li>
-        `;
-      }).join("");
-    }
-    // ここで早期 return して以降の「トピックページ判定／上位5件表示」処理を実行させない
-    return;
-  }
-  // --- ここまで追加 ---
   
     // 現在のページが /homepage/topic か判定
     const isTopicPage = location.pathname.includes("/homepage/topic/");
@@ -109,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
 });
+
 
 
 
