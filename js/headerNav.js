@@ -116,6 +116,9 @@ document.querySelectorAll('.has-submenu > a').forEach(parentLink => {
 
     if (window.innerWidth <= 1024) {
       // submenuがはみ出す分を押し下げる処理
+    
+    // submenuを表示してから高さ計算（iOS Safari対策）
+    requestAnimationFrame(() => {
       const submenuHeight = submenu.offsetHeight;
       let push = false;
 
@@ -127,6 +130,7 @@ document.querySelectorAll('.has-submenu > a').forEach(parentLink => {
           }
         }
         if (li === parentLi) push = true;
+      });
       });
     }
    }
@@ -191,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
