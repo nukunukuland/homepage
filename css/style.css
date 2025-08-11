@@ -384,7 +384,6 @@ a {
     align-content: center;
     justify-items: center;
     display: flex;
-    justify-content: center;
   }
 
   .header-nav ul {
@@ -404,6 +403,12 @@ a {
   padding: 0;
   margin-left: auto;
   cursor: pointer;
+  width: 16vw;
+  padding: 2.16vw 5.88vw;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0;
 }
 
 .hamburger img {
