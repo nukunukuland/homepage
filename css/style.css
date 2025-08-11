@@ -381,10 +381,9 @@ a {
 /* スマホ対応 */
 @media (max-width: 1024px) {
   .header-wrapper {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    flex-wrap: nowrap; 
+    align-content: center;
+    justify-items: center;
+    display: flex; 
   }
 
   .header-nav ul {
