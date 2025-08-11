@@ -56,7 +56,7 @@ main {
   .massage-title h1,
   .profile-title h1,
   .contact-title h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .massage-content,
@@ -159,6 +159,7 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
 
