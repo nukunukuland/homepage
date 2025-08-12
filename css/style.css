@@ -445,6 +445,7 @@ a {
     width: 200px;
     align-items: center;
     align-content: center;
+    flex: 1;
 }
 
 .site-name a {
