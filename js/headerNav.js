@@ -12,8 +12,8 @@ function renderHeaderNav() {
       <div class="header-wrapper">
        <div class="site-name">
         <a href="/homepage">
-        <img src="/homepage/image/nukunuku.svg" alt="サイト名" class="header-img">
-　　　　</a>
+          <img src="/homepage/image/nukunuku.svg" alt="サイト名" class="header-img" />
+        </a>
        </div>
         <button class="hamburger" aria-label="メニューを開く">
           <img src="/homepage/image/menu-icon.svg" alt="メニュー" />
@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
