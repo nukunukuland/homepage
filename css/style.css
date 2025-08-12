@@ -810,6 +810,33 @@ footer {
   width: 100px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  margin: 0.2rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.page-btn.active {
+  background: #d64550;
+  color: #fff;
+  border-color: #d64550;
+}
+
+.page-btn:hover {
+  background: #f2f2f2;
+}
+
 .contact-address a {
   color: #000;
 }
