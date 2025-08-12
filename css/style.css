@@ -807,7 +807,7 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  width:100px;
+  width: 100px;
 }
 
 .contact-address a {
@@ -820,6 +820,12 @@ footer {
    flex-direction: column;
    padding: 1rem 10rem;
 }
+
+  .Container404 h1 {
+     border-bottom: 1px solid;
+     width: 100%;
+     font-size: 3rem;
+}
 @media (max-width: 1024px) {
   .Container404 {
     padding: 1rem;
@@ -827,10 +833,4 @@ footer {
   .Container404 h1 {
     font-size: 2rem;
   }
-}
-
-  .Container404 h1 {
-     border-bottom: 1px solid;
-     width: 100%;
-     font-size: 3rem;
 }
