@@ -11,12 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const topicsData = [
     { date: "2025.07.30", catClass: "cat04", title: "ホームページを公開しました。", link: "#" },
     { date: "2025.08.02", catClass: "cat01", title: "つながりあそび・うた​研究所35周年記念コンサートのお知らせ", link: "#" },
-    { date: "2025.08.04", catClass: "cat03", title: "カレンダー更新しました【不定期更新】", link: "#" },
-    { date: "2025.08.05", catClass: "cat01", title: "カレンダー更新しました【不定期更新】", link: "#" },
-    { date: "2025.08.06", catClass: "cat02", title: "カレンダー更新しました【不定期更新】", link: "#" },
-    { date: "2025.08.07", catClass: "cat01", title: "カレンダー更新しました【不定期更新】", link: "#" },
-    { date: "2025.08.08", catClass: "cat03", title: "カレンダー更新しました【不定期更新】", link: "#" },
-    { date: "2025.08.09", catClass: "cat04", title: "カレンダー更新しました【不定期更新】", link: "#" }
+    { date: "2025.08.04", catClass: "cat01", title: "カレンダー更新しました【不定期更新】", link: "#" }
   ];
 
   const topicsList = document.querySelector(".topics-list");
@@ -111,3 +106,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
