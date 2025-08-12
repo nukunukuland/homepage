@@ -23,12 +23,31 @@ document.addEventListener("DOMContentLoaded", () => {
   topicsData.sort((a, b) =>
     new Date(String(b.date).replace(/\./g, '-')) - new Date(String(a.date).replace(/\./g, '-'))
   );
-  
-    // 現在のページが /homepage/topic か判定
-    const isTopicPage = location.pathname.includes("/homepage/topic/");
+    // 現在のページが /homepage/topics/ 系か判定し、カテゴリ指定があれば抽出する
+    const path = location.pathname;
+    const isTopicsPage = path.includes("/homepage/topics");
+    const catMatch = path.match(/\/homepage\/topics\/(cat\d+)(?:\/|$)/); // cat01 等を拾う
+    const currentCategory = catMatch ? catMatch[1] : null;
 
-    // トピックページ/homepage/topic 以外は上から5件だけ表示
-    if (isTopicPage) {
+    // /homepage/topics/ 系ページの場合
+    if (isTopicsPage) {
+      // URL にカテゴリ指定がある場合はそのカテゴリのみ表示（URL直接入力対応）
+      if (currentCategory) {
+        const filtered = topicsData.filter(item => item.catClass === currentCategory);
+        topicsList.innerHTML = filtered.map(item => {
+          const label = catLabels[item.catClass] || item.cat || "";
+          return `
+            <li>
+              <span class="date">${item.date}</span>
+              <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
+              <a href="${item.link}" class="explain">${item.title}</a>
+            </li>
+          `;
+        }).join("") || `<li class="no-item">該当するトピックはありません。</li>`;
+        return; // カテゴリ指定表示はここで完了
+      }
+
+      // カテゴリ指定がない（トップの /homepage/topics/）は従来どおりページネーション表示
       const itemsPerPage = 5;
       let currentPage = 1;
       const totalPages = Math.ceil(topicsData.length / itemsPerPage);
@@ -83,4 +102,5 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
 });
+
 
