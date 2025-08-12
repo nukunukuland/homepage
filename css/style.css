@@ -824,9 +824,13 @@ footer {
   .Container404 {
     padding: 1rem;
  }
+.Container404 h1 {
+  font-size: 2rem;
+ }
 }
 
 .Container404 h1 {
    border-bottom: 1px solid;
    width: 100%
+   font-size: 3rem;
 }
