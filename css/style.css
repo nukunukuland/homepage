@@ -813,3 +813,20 @@ footer {
 .contact-address a {
   color: #000;
 }
+
+.404Container {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+   padding: 1rem 10rem;
+}
+@media (max-width: 1024px) {
+  .404Container {
+    padding: 1rem;
+ }
+}
+
+.404Container h1 {
+   border-bottom: 1px solid;
+   width: 100%
+}
