@@ -25,8 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // 現在のページが /homepage/topics/ 系か判定し、カテゴリ指定があれば抽出する
   const path = location.pathname;
   const isTopicsPage = path.includes("/homepage/topics");
-  const catMatch = path.match(/\/homepage\/topics\/(cat\d+)(?:\/|$)/); // cat01 等を拾う
-  const currentCategory = catMatch ? catMatch[1] : null;
+
+  // --- ここを拡張：クエリ / ハッシュ / パス の順でカテゴリを拾う ---
+  const urlParams = new URLSearchParams(location.search);
+  const catFromQuery = urlParams.get('cat');             // /homepage/topics/?cat=cat01
+  const hashMatch = location.hash.match(/#(cat\d+)/);    // /homepage/topics/#cat01
+  const pathMatch = path.match(/\/homepage\/topics\/(cat\d+)(?:\/|$)/); // /homepage/topics/cat01
+  const currentCategory = catFromQuery || (hashMatch ? hashMatch[1] : (pathMatch ? pathMatch[1] : null));
 
   // /homepage/topics/ 系ページの場合
   if (isTopicsPage) {
@@ -38,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `
           <li>
             <span class="date">${item.date}</span>
-            <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
+            <a href="/homepage/topics/?cat=${item.catClass}" class="cat ${item.catClass}">${label}</a>
             <a href="${item.link}" class="explain">${item.title}</a>
           </li>
         `;
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `
           <li>
             <span class="date">${item.date}</span>
-            <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
+            <a href="/homepage/topics/?cat=${item.catClass}" class="cat ${item.catClass}">${label}</a>
             <a href="${item.link}" class="explain">${item.title}</a>
           </li>
         `;
@@ -98,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <li>
           <span class="date">${item.date}</span>
-          <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
+          <a href="/homepage/topics/?cat=${item.catClass}" class="cat ${item.catClass}">${label}</a>
           <a href="${item.link}" class="explain">${item.title}</a>
         </li>
       `;
@@ -106,4 +111,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
-
