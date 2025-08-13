@@ -69,6 +69,10 @@ a {
   color: #ff6565;
 }
 
+ul {
+  list-style: none;
+}
+
 .message p {
   margin: 5px;
 }
