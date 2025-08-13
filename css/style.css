@@ -752,10 +752,11 @@ footer {
   justify-content: center;
 }
 
-.cat01 { background: #d64550; } /* イベント */
+.cat01 { background: #42A5F5; } /* イベント */
 .cat02 { background: #03A9F4; } /* お知らせ */
 .cat03 { background: #4CAF50; } /* 募集 */
-.cat04 { background: #c1c1c1; } /* その他 */
+.cat04 { background: #d64550; } /* ぬくぬくらんど */
+.cat05 { background: #c1c1c1; } /* その他 */
 
 
 .topics-list .explain {
