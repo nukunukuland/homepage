@@ -802,12 +802,12 @@ footer {
 }
 
 .topics-select {
-    border-bottom: 1px solid #fff0f0;
+    border-bottom: 1px solid #d64550;
     margin-bottom: 50px;
 }
 @media screen and (max-width: 1024px) {
     .topics-select {
-        border-bottom: 1px solid #fff0f0;
+        border-bottom: 1px solid #d64550;
         margin-bottom: 6.67vw;
     }
   }
@@ -817,6 +817,7 @@ footer {
     align-items: stretch;
     gap: 3px;
     padding: 0;
+    margin: 0;
 }
 @media screen and (max-width: 1024px) {
     .topics-select ul {
