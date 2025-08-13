@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     cat01: "イベント",
     cat02: "お知らせ",
     cat03: "重要",
-    cat04: "その他"
-    // 必要ならここに cat05: "内容" という形で追加してください
+    cat04: "ぬくぬくらんど",
+    cat05: "その他"
+    // 必要ならここに cat06: "内容" という形で追加してください
   };
 
   const topicsData = [
-    { date: "2025.07.30", catClass: "cat04", title: "ホームページを公開しました。", link: "#" },
+    { date: "2025.07.30", catClass: "cat05", title: "ホームページを公開しました。", link: "#" },
     { date: "2025.08.02", catClass: "cat01", title: "つながりあそび・うた​研究所35周年記念コンサートのお知らせ", link: "#" },
     { date: "2025.08.04", catClass: "cat01", title: "カレンダー更新しました【不定期更新】", link: "#" }
   ];
@@ -159,4 +160,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 
