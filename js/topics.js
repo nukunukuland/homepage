@@ -28,12 +28,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const path = location.pathname;
   const isTopicsPage = path.includes("/homepage/topics");
 
-  // --- ここを拡張：クエリ / ハッシュ / パス の順でカテゴリを拾う ---
+  // --- クエリ / ハッシュ / パス の順でカテゴリを拾う ---
   const urlParams = new URLSearchParams(location.search);
   const catFromQuery = urlParams.get('cat');             // /homepage/topics/?cat=cat01
   const hashMatch = location.hash.match(/#(cat\d+)/);    // /homepage/topics/#cat01
   const pathMatch = path.match(/\/homepage\/topics\/(cat\d+)(?:\/|$)/); // /homepage/topics/cat01
   const currentCategory = catFromQuery || (hashMatch ? hashMatch[1] : (pathMatch ? pathMatch[1] : null));
+
+    // --- .topics-select の該当 li に .current を付与 ---
+  (function markTopicsSelectCurrent(){
+    const listItems = document.querySelectorAll(".topics-select ul li");
+    if (!listItems || listItems.length === 0) return; // .topics-select が無ければ何もしない
+
+    // 汎用：末尾スラッシュを除く正規化
+    const normalize = p => String(p).replace(/\/+$/, "");
+
+    const locPath = normalize(location.pathname);
+
+    listItems.forEach(li => {
+      li.classList.remove("current"); // 一旦クリア（既存状態を壊さないための安全処理）
+      const a = li.querySelector("a");
+      if (!a) return;
+      const href = a.getAttribute("href") || "";
+
+      // href を URL として解釈（相対/絶対どちらでも扱える）
+      let anchorPath = "";
+      try {
+        anchorPath = normalize(new URL(href, location.origin).pathname);
+      } catch (e) {
+        // mailto: や javascript: 等が来ても落とさない
+        anchorPath = href;
+      }
+
+      // 1) パス自体が完全一致する場合（例: /homepage/topics/）
+      if (anchorPath === locPath) {
+        li.classList.add("current");
+        return;
+      }
+
+      // 2) currentCategory がある場合、アンカーのパス末尾がカテゴリ名と一致すれば選択
+      //    例: anchorPath '/homepage/topics/cat01' と currentCategory 'cat01'
+      if (currentCategory && (anchorPath.endsWith('/' + currentCategory) || anchorPath.endsWith(currentCategory))) {
+        li.classList.add("current");
+        return;
+      }
+
+      // 3) まれに href にクエリやハッシュが直書きされている場合（安全対処）
+      if (currentCategory && href.includes(currentCategory)) {
+        li.classList.add("current");
+        return;
+      }
+    });
+  })();
 
   // /homepage/topics/ 系ページの場合
   if (isTopicsPage) {
@@ -113,3 +159,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
