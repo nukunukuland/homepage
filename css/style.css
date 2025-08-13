@@ -146,6 +146,7 @@ ul {
 #calendar-container {
   padding: 1rem;
   border-radius: 8px;
+  border: 2px solid #ffdddd;
 }
 
 /* カレンダーテーブルスタイル */
