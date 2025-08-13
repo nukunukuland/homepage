@@ -1,4 +1,8 @@
 /* ベーススタイル */
+html {
+  touch-action: manipulation;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.7;
