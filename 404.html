@@ -68,10 +68,25 @@
 (function() {
   var path = location.pathname;
 
-  // /homepage/topics/catXX 形式なら ?cat=catXX に変換してtopicsページに飛ばす
+  // /homepage/topics/catXX 形式なら topics の index.html をフェッチしてその内容で表示する（URL はそのまま）
   var match = path.match(/^\/homepage\/topics\/(cat\d+)(?:\/|$)/);
   if (match) {
-    location.replace("/homepage/topics/?cat=" + match[1]);
+    var indexUrl = "/homepage/topics/index.html";
+    fetch(indexUrl).then(function(res) {
+      if (!res.ok) throw new Error("fetch failed");
+      return res.text();
+    }).then(function(html) {
+      // ドキュメント全文を置き換えて index.html と同じレンダリングにする
+      document.open();
+      document.write(html);
+      document.close();
+      // 履歴 state を置いておく（topics.js 側の popstate に対応）
+      try { history.replaceState({cat: match[1]}, "", path); } catch (e) { /* ignore */ }
+      // （index.html 内のスクリプトが実行され、location.pathname を参照してカテゴリ絞り込みが行われます）
+    }).catch(function(err) {
+      // フェッチ失敗時は従来の挙動にフォールバック（互換性確保）
+      location.replace("/homepage/topics/?cat=" + match[1]);
+    });
   }
 })();
 </script>
