@@ -64,7 +64,18 @@
   </footer>
 
 <script src="/homepage/js/headerNav.js"></script>
-  
+<script>
+(function() {
+  var path = location.pathname;
+
+  // /homepage/topics/catXX 形式なら ?cat=catXX に変換してtopicsページに飛ばす
+  var match = path.match(/^\/homepage\/topics\/(cat\d+)(?:\/|$)/);
+  if (match) {
+    location.replace("/homepage/topics/?cat=" + match[1]);
+  }
+})();
+</script>
+
 </body>
 </html>
 
