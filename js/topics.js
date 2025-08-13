@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `
           <li>
             <span class="date">${item.date}</span>
-            <a href="/homepage/topics/?cat=${item.catClass}" class="cat ${item.catClass}">${label}</a>
+            <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
             <a href="${item.link}" class="explain">${item.title}</a>
           </li>
         `;
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return `
           <li>
             <span class="date">${item.date}</span>
-            <a href="/homepage/topics/?cat=${item.catClass}" class="cat ${item.catClass}">${label}</a>
+            <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
             <a href="${item.link}" class="explain">${item.title}</a>
           </li>
         `;
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <li>
           <span class="date">${item.date}</span>
-          <a href="/homepage/topics/?cat=${item.catClass}" class="cat ${item.catClass}">${label}</a>
+          <a href="/homepage/topics/${item.catClass}" class="cat ${item.catClass}">${label}</a>
           <a href="${item.link}" class="explain">${item.title}</a>
         </li>
       `;
@@ -111,3 +111,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
