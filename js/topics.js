@@ -1,3 +1,5 @@
+//js/topics.js
+
 document.addEventListener("DOMContentLoaded", () => {
   // --- カテゴリ名を一箇所で管理するマップ（ここを編集してカテゴリ名を増やす） ---
   const catLabels = {
@@ -111,4 +113,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 
