@@ -109,8 +109,14 @@ main {
   transform: scaleX(-1)
 }
 
+.sns-contact-content{
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   justify-items: center;
+}
+
 .add-snsWrapper {
-  justify-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,6 +170,7 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
 
