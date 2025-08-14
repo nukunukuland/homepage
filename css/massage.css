@@ -130,7 +130,7 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   margin-bottom: 1rem;
 }
 
@@ -173,6 +173,7 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
 
