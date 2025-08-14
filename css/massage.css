@@ -138,6 +138,13 @@ main {
   margin:0;
 }
 
+@media (min-width: 768px) {
+  .add-line,
+  .add-insta {
+     font-size: 0.95rem !important;
+  }
+}
+
 .add-line,
 .add-insta {
   display: flex;
@@ -173,6 +180,7 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
 
