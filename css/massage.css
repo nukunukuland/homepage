@@ -114,6 +114,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 .add-sns {
   display: flex;
@@ -162,6 +163,7 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
 
