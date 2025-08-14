@@ -111,6 +111,9 @@ main {
 
 .add-snsWrapper {
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .add-sns {
   display: flex;
@@ -159,6 +162,7 @@ main {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
+
 
 
 
