@@ -12,8 +12,10 @@ nav.className = "calendar-nav";
 
 // Google カレンダー iframe を挿入
 nav.innerHTML = `
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&showTz=0&showCalendars=0&src=YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ef6c00" 
-style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div class="calendar-iframe-wrapper">
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=Asia%2FTokyo&amp;showPrint=0&amp;showTitle=0&amp;color=%23ef6c00" 
+  frameborder="0" scrolling="no"></iframe>
+</div>
 `;
 
 // calendar-container に追加
