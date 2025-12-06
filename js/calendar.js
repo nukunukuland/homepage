@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
         locale: 'ja',
         
         // Google Calendar連携の設定
+        googleCalendarApiKey: 'AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8',
         
         events: {
-            googleCalendarId: 'YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t', 
-            apiKey: 'AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8'
+            googleCalendarId: 'YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
         },
 
         // その他のオプション (例: ヘッダーツールバーの表示設定)
