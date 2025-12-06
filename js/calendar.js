@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         locale: 'ja',
         
         // Google Calendar連携の設定
-        // ※事前に取得したAPIキーとカレンダーIDに置き換えてください
         googleCalendarApiKey: 'AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8', 
         
         events: {
