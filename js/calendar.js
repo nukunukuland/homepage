@@ -1,22 +1,38 @@
 // js/calendar.js
 
-// calendar-container に Google カレンダー iframe を埋め込む
-const calendarContainer = document.getElementById("calendar-container");
+// FullCalendarを使ってGoogleカレンダーを表示
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // カレンダーを表示する要素を取得（既存のIDを再利用）
+    const calendarContainer = document.getElementById('calendar-container');
 
-// 既存内容をクリア
-calendarContainer.innerHTML = "";
+    // FullCalendarのインスタンスを作成
+    const calendar = new FullCalendar.Calendar(calendarContainer, {
+        
+        // 初期表示を月ビューに設定
+        initialView: 'dayGridMonth',
+        
+        // 日本語に設定 (オプション)
+        locale: 'ja',
+        
+        // Google Calendar連携の設定
+        // ※事前に取得したAPIキーとカレンダーIDに置き換えてください
+        googleCalendarApiKey: 'AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8', 
+        
+        events: {
+            googleCalendarId: 'YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t' 
+        },
 
-// カレンダー用ラッパー
-const nav = document.createElement("div");
-nav.className = "calendar-nav";
+        // その他のオプション (例: ヘッダーツールバーの表示設定)
+        headerToolbar: {
+             left: 'prev,next today',
+             center: 'title',
+             right: 'dayGridMonth,dayGridWeek'
+        }
+        
+    });
 
-// Google カレンダー iframe を挿入
-nav.innerHTML = `
-<div class="calendar-iframe-wrapper">
-  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&showTz=0&showCalendars=0&src=YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ef6c00" 
-  frameborder="0" scrolling="no"></iframe>
-</div>
-`;
-
-// calendar-container に追加
-calendarContainer.appendChild(nav);
+    // カレンダーを表示
+    calendar.render();
+    
+});
