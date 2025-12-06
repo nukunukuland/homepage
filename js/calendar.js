@@ -1,23 +1,43 @@
 // js/calendar.js
 
-// calendar-container に Google カレンダー iframe を埋め込む
-const calendarContainer = document.getElementById("calendar-container");
+const API_KEY = "AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8";
+const CALENDAR_ID = "YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"; // iframe srcから抜き出したカレンダーID
 
-// 既存内容をクリア
-calendarContainer.innerHTML = "";
+// FullCalendarの初期化関数
+function initFullCalendar() {
+    const calendarEl = document.getElementById('calendar-container');
 
-// カレンダー用ラッパー
-const nav = document.createElement("div");
-nav.className = "calendar-nav";
+    // FullCalendarのインスタンスを作成
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        // 日本語化
+        locale: 'ja',
+        // 使用するプラグイン
+        plugins: ['googleCalendar'],
+        // 初期表示ビュー
+        initialView: 'dayGridMonth',
+        // カレンダーのヘッダー設定
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,listWeek'
+        },
+        // Googleカレンダーのイベントソース設定
+        googleCalendarApiKey: API_KEY,
+        eventSources: [
+            {
+                googleCalendarId: CALENDAR_ID,
+                // FullCalendarで表示されるイベントの色 (既存iframeのcolor=ef6c00を反映)
+                backgroundColor: '#ef6c00',
+                borderColor: '#ef6c00',
+                textColor: '#ffffff'
+            }
+        ]
+        // その他のカスタム設定をここに追加できます
+    });
 
-// Google カレンダー iframe を挿入
-nav.innerHTML = `
-<div class="calendar-iframe-wrapper">
-  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&showTz=0&showCalendars=0&src=YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ef6c00" 
-  frameborder="0" scrolling="no"></iframe>
-</div>
-`;
+    // カレンダーを描画
+    calendar.render();
+}
 
-// calendar-container に追加
-calendarContainer.appendChild(nav);
-
+// FullCalendarを初期化
+initFullCalendar();
