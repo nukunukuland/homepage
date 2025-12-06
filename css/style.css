@@ -121,13 +121,7 @@ ul {
   width: 100%;
   flex-shrink: 0;
 }
-
-/* ギャラリー横幅いっぱいにする */
-.gallery {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
+  
 .gallery-indicators {
   text-align: center;
 }
@@ -144,6 +138,13 @@ ul {
 
 .gallery-indicators .active {
   background: #d64550;
+}
+
+@media (max-width: 1024px) {
+ .gallery {
+   width: 100vw;
+   margin-left: calc(-50vw + 50%);
+ }
 }
 
 /* カレンダー */
