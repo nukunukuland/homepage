@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         locale: 'ja',
         
         // Google Calendar連携の設定
-        googleCalendarApiKey: 'AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8',
+        googleCalendarApiKey: 'AIzaSyCxV3IXaYmsvogIJ4T3efM6kAmaLsCjNuE',
         
         events: {
             googleCalendarId: 'a3f1f59e8e4988b442552bcd1262f998f8d6d54b31378dd98531217dc6d2b667@group.calendar.google.com',
