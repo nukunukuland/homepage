@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         googleCalendarApiKey: 'AIzaSyDOhHFpAJUOzTAqNwczRLrSaK3KM3ONAc8',
         
         events: {
-            googleCalendarId: 'YTNmMWY1OWU4ZTQ5ODhiNDQyNTUyYmNkMTI2MmY5OThmOGQ2ZDU0YjMxMzc4ZGQ5ODUzMTIxN2RjNmQyYjY2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+            googleCalendarId: 'a3f1f59e8e4988b442552bcd1262f998f8d6d54b31378dd98531217dc6d2b667@group.calendar.google.com',
         },
 
         // その他のオプション (例: ヘッダーツールバーの表示設定)
