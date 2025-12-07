@@ -948,7 +948,13 @@ footer {
 .calendar-iframe-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* 600 / 800 = 0.75, 高さ比率 */
+  padding-top: 75%; 
+}
+@media (max-width: 1024px) {
+ .calendar-iframe-wrapper {
+    padding-top: 100%;
+    height: 100px;
+  }
 }
 
 .calendar-iframe-wrapper iframe {
