@@ -68,14 +68,14 @@ function renderHeaderNav() {
           <ul>
            <li class="main-menu"><a href="/homepage">ホーム</a></li>
            <li class="has-submenu">
-             <a href="/homepage/massage">ぬくぬくらんど</a>
+             <a">ぬくぬくらんど</a>
              <ul class="submenu">
                <li><a href="/homepage/profile">ぬくぬくについて</a></li>
                <li><a href="/homepage/contact">お問い合わせ</a></li>
              </ul>
            </li>
            <li class="has-submenu">
-             <a href="#">活動について</a>
+             <a>活動について</a>
              <ul class="submenu">
                <li><a href="/homepage/massage">ベビーマッサージ</a></li>
                <li><a href="/homepage/mama-zu">ままーず</a></li>
@@ -197,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
