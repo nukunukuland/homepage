@@ -29,7 +29,7 @@ function renderHeaderNav() {
           <ul>
            <li><a href="/homepage">ホーム</a></li>
            <li class="has-submenu">
-             <a>親子子育て広場とは</a>
+             <a>ぬくぬくらんどについて</a>
              <ul class="submenu">
                <li><a href="/homepage/profile">ぬくぬくについて</a></li>
                <li><a href="/homepage/contact">お問い合わせ</a></li>
@@ -39,7 +39,8 @@ function renderHeaderNav() {
              <a>活動について</a>
              <ul class="submenu">
                <li><a href="/homepage/massage">ベビーマッサージ</a></li>
-               <li><a href="/homepage/profile">プロフィール</a></li>
+               <li><a href="/homepage/mama-zu">ままーず</a></li>
+               <li><a href="/homepage/miyukicafe">みゆきカフェ</a></li>
              </ul>
            </li>
            <li><a href="#">イベントカレンダー</a></li>
@@ -67,7 +68,7 @@ function renderHeaderNav() {
           <ul>
            <li class="main-menu"><a href="/homepage">ホーム</a></li>
            <li class="has-submenu">
-             <a href="/homepage/massage">親子子育て広場とは</a>
+             <a href="/homepage/massage">ぬくぬくらんどについて</a>
              <ul class="submenu">
                <li><a href="/homepage/profile">ぬくぬくについて</a></li>
                <li><a href="/homepage/contact">お問い合わせ</a></li>
@@ -77,7 +78,8 @@ function renderHeaderNav() {
              <a href="#">活動について</a>
              <ul class="submenu">
                <li><a href="/homepage/massage">ベビーマッサージ</a></li>
-               <li><a href="/homepage/profile">プロフィール</a></li>
+               <li><a href="/homepage/mama-zu">ままーず</a></li>
+               <li><a href="/homepage/miyukicafe">みゆきカフェ</a></li>
              </ul>
            </li>
            <li class="main-menu"><a href="#">イベントカレンダー</a></li>
@@ -195,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
 
 
