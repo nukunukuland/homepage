@@ -1,0 +1,90 @@
+# お知らせ管理画面の設定（Sveltia CMS）
+# https://nukunukuland.pages.dev/admin/ で開きます
+
+backend:
+  name: github
+  repo: nukunukuland/homepage        # ← GitHub の「持ち主/リポジトリ名」。違っていたら書きかえ
+  branch: main
+  base_url: https://nukunukuland.pages.dev   # ログイン処理（functions/auth.js）の場所
+  auth_scope: public_repo            # 公開リポジトリだけを触れる権限。非公開リポジトリなら repo に
+  commit_messages:
+    create: "お知らせを追加：{{slug}}"
+    update: "お知らせを更新：{{slug}}"
+    delete: "お知らせを削除：{{slug}}"
+    uploadMedia: "写真を追加：{{path}}"
+    deleteMedia: "写真を削除：{{path}}"
+
+app_title: ぬくぬくらんど お知らせ管理
+site_url: https://nukunukuland.pages.dev
+display_url: https://nukunukuland.pages.dev
+
+# 写真の置き場所。スマホの大きな写真も、自動で小さく軽くしてから保存します
+media_folder: src/public/image/news
+public_folder: /image/news
+media_libraries:
+  default:
+    config:
+      max_file_size: 25000000
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1600
+          height: 1600
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: news
+    label: お知らせ
+    label_singular: お知らせ
+    description: 書いて「保存」すると、数分でホームページに載ります。
+    folder: content/news
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}"
+    summary: "{{date}}　{{title}}"
+    sortable_fields: [date, title]
+    preview_path: "news/{{slug}}/"
+    fields:
+      - label: タイトル
+        name: title
+        widget: string
+        hint: 一覧に出る見出しです。短めがおすすめ（例：12月のみゆきカフェのお知らせ）
+      - label: 日付
+        name: date
+        widget: datetime
+        type: date
+        format: YYYY-MM-DD
+        default: "{{now}}"
+      - label: 種類
+        name: category
+        widget: select
+        default: info
+        options:
+          - { label: イベント, value: event }
+          - { label: お知らせ, value: info }
+          - { label: 大切なお知らせ, value: important }
+          - { label: その他, value: other }
+      - label: 写真（なくてもOK）
+        name: image
+        widget: image
+        required: false
+        hint: 顔がはっきり写っている写真は、写っている方の了解を取ってから載せてください
+      - label: 本文
+        name: body
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, link, heading-three, bulleted-list, numbered-list]
+        editor_components: [image]
+      - label: 下書きにする
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+        hint: オンのあいだはホームページに出ません

@@ -1,0 +1,6 @@
+/contact /#access 301
+/contact/ /#access 301
+/topics /news/ 301
+/topics/* /news/ 301
+/homepage / 301
+/homepage/* /:splat 301
