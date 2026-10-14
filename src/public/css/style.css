@@ -107,9 +107,16 @@ main h2 {
     padding: 1rem 16px 1.5rem;
     background: var(--paper); border-bottom: 2px dashed #F3D3CB;
     box-shadow: 0 12px 24px rgba(90, 64, 56, .12);
-    display: none;
+    display: flex;
+    /* 閉じているとき：少し上にずらして透明に。開くときにふわっと下りてくる */
+    visibility: hidden; opacity: 0; transform: translateY(-12px);
+    pointer-events: none;
+    transition: opacity .28s ease, transform .28s ease, visibility 0s linear .28s;
   }
-  .gnav.is-open { display: flex; }
+  .gnav.is-open {
+    visibility: visible; opacity: 1; transform: none; pointer-events: auto;
+    transition: opacity .28s ease, transform .28s ease, visibility 0s;
+  }
   .gnav ul { flex-direction: column; gap: 0; }
   .gnav ul a { display: block; padding: .8rem .2rem; border-bottom: 1px solid #F3E2DA; font-size: 1.05rem; }
   .gnav .btn { align-self: flex-start; }
@@ -256,9 +263,6 @@ main h2 {
 .host__photo { border-radius: var(--radius); aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
 .host__quote { font-size: clamp(1.2rem, 1rem + .8vw, 1.5rem); line-height: 1.7; color: var(--rose); margin: .2em 0 1em; }
 .host__links a { font-weight: 700; }
-.request { margin-top: 1.6rem; background: #fff; border-radius: var(--radius); padding: 20px 22px; border: 2px dashed var(--hiyoko); }
-.request h3 { margin-bottom: .3em; }
-.request p { margin: 0; font-size: .95rem; }
 @media (max-width: 760px) {
   .host__inner { grid-template-columns: 1fr; }
   .host__photo { aspect-ratio: 16 / 10; }
@@ -346,7 +350,7 @@ main h2 {
 
 .page-body { max-width: 760px; padding-block: clamp(32px, 5vw, 64px) 0; }
 .story p { margin-bottom: 1.2em; }
-.story h2, .join h2, .others h2, .request--wide h2 { font-size: clamp(1.2rem, 1.05rem + .6vw, 1.45rem); }
+.story h2, .join h2, .others h2 { font-size: clamp(1.2rem, 1.05rem + .6vw, 1.45rem); }
 .story__closing { display: block; font-size: 1.15rem; color: var(--rose); margin-top: 1.6em; line-height: 1.8; }
 .story__list { list-style: none; padding: 0; margin: 0 0 1.2em; display: flex; flex-wrap: wrap; gap: .6rem; }
 .story__list li { background: var(--c-soft); border-radius: 999px; padding: .3em 1em; }
@@ -369,8 +373,6 @@ main h2 {
 .tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
 .tags li { background: var(--cream); border-radius: 999px; padding: .35em 1.1em; }
 
-.request--wide { margin-top: 2rem; }
-.request--wide h2 { background: none; padding: 0; display: block; margin-bottom: .3em; }
 
 .others { padding-bottom: clamp(48px, 7vw, 80px); text-align: center; }
 .others h2 { background: none; display: block; }
