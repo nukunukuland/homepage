@@ -15,6 +15,8 @@ backend:
     deleteMedia: "写真を削除：{{path}}"
 
 app_title: ぬくぬくらんど お知らせ管理
+logo:
+  src: /image/mark.svg            # ログイン画面などに出るマーク
 site_url: https://nukunukuland.pages.dev
 display_url: https://nukunukuland.pages.dev
 
@@ -49,7 +51,11 @@ collections:
     delete: true
     slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}"
     summary: "{{date}}　{{title}}"
-    sortable_fields: [date, title]
+    sortable_fields:
+      fields: [date, title]
+      default:
+        field: date
+        direction: descending       # 新しいお知らせを上に
     preview_path: "news/{{slug}}/"
     fields:
       - label: タイトル
