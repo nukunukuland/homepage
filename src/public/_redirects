@@ -4,3 +4,11 @@
 /topics/* /news/ 301
 /homepage / 301
 /homepage/* /:splat 301
+/news/2025-07-30-hp /news/20250730/ 301
+/news/2025-07-30-hp/ /news/20250730/ 301
+/news/2025-08-02-concert /news/20250802/ 301
+/news/2025-08-02-concert/ /news/20250802/ 301
+/news/2025-08-04-calendar /news/20250804/ 301
+/news/2025-08-04-calendar/ /news/20250804/ 301
+/news/2026-10-14-1903 /news/20261015/ 301
+/news/2026-10-14-1903/ /news/20261015/ 301

@@ -193,9 +193,9 @@ function pager(base, page, pages) {
   if (pages <= 1) return "";
   const href = (p) => (p === 1 ? base : `${base}page/${p}/`);
   const links = [];
-  if (page > 1) links.push(`<a class="pager__prev" href="${href(page - 1)}">新しいお知らせ</a>`);
+  if (page > 1) links.push(`<a class="pager__prev" href="${href(page - 1)}">‹ 前のページ</a>`);
   links.push(`<span class="pager__now">${page} / ${pages}</span>`);
-  if (page < pages) links.push(`<a class="pager__next" href="${href(page + 1)}">前のお知らせ</a>`);
+  if (page < pages) links.push(`<a class="pager__next" href="${href(page + 1)}">次のページ ›</a>`);
   return `<nav class="pager" aria-label="ページ">${links.join("")}</nav>`;
 }
 
@@ -303,9 +303,9 @@ ${markdown(n.body)}
       </div>
     </article>
     <nav class="pager pager--article" aria-label="前後のお知らせ">
-      ${newer ? `<a class="pager__prev" href="${newer.url}">${esc(newer.title)}</a>` : "<span></span>"}
+      ${newer ? `<a class="pager__prev" href="${newer.url}">次のお知らせ</a>` : "<span></span>"}
       <a class="pager__list" href="/news/">お知らせ一覧</a>
-      ${older ? `<a class="pager__next" href="${older.url}">${esc(older.title)}</a>` : "<span></span>"}
+      ${older ? `<a class="pager__next" href="${older.url}">前のお知らせ</a>` : "<span></span>"}
     </nav>`);
     emit(n.url, render({
       title: `${n.title}｜ぬくぬくらんど`,
